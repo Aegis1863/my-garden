@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/reinforcement-learning/ppo/","dgPassFrontmatter":true}
 ---
 
+代码 [12\_PPO.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/12_PPO.ipynb)
 
 #机器学习/强化学习/同策略 #机器学习/强化学习/连续动作 #机器学习/强化学习/离散动作 
 # 网络结构
