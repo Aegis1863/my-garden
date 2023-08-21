@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/a2-c/","dgPassFrontmatter":true,"created":"2023-08-07T17:26:17.787+08:00","updated":"2023-08-21T12:32:48.530+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/a2-c/","dgPassFrontmatter":true}
 ---
 
 
