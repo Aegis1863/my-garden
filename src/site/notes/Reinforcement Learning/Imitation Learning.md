@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/reinforcement-learning/imitation-learning/","dgPassFrontmatter":true}
 ---
 
+代码 [15\_模仿学习.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/15_%E6%A8%A1%E4%BB%BF%E5%AD%A6%E4%B9%A0.ipynb)
 # 行为克隆
 >behavior clone
 
@@ -14,4 +15,4 @@
 
 先收集agent和专家的状态、动作序列，再训练判别器，向判别器分别输入两者的状态、动作序列，判别器给出一个对数化概率`log_prob`，越靠近1代表越像agent，越靠近0则代表越像专家，也就是说agent轨迹的label就是1，专家轨迹的label就是0，因此把两者的交叉熵损失加起来就是判别器的总损失，优化器对这个总损失进行梯度下降训练判别器，需要注意的是，判别器是不需要预训练的，与RL同步训练即可。
 
-更新演员网络，需要把reward修改掉，改成`-log_prob`，也就是agent越不像专家$prob$越接近1，奖励就越低，也就是这个概率越接近0越好。而PPO里面要梯度上升，就是要往提升奖励的方向调整，提升`-log_prob`，也就是要$prob$靠近0。
+更新演员网络，需要把reward修改掉，改成`-log_prob`，也就是agent越不像专家，$prob$就越接近1，奖励就越低，也就是这个概率越接近0越好。而PPO里面要梯度上升，就是要往提升奖励的方向调整，提升`-log_prob`，也就是要$prob$靠近0。
