@@ -2,6 +2,7 @@
 {"dg-publish":true,"permalink":"/reinforcement-learning/td-3/","dgPassFrontmatter":true}
 ---
 
+代码 [13\_TD3.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/13_TD3.ipynb)
 
 #机器学习/强化学习/连续动作 #机器学习/强化学习/异策略 #机器学习/强化学习/确定性策略
 
