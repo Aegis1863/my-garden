@@ -3,6 +3,8 @@
 ---
 
 
+代码 [13\_DDPG.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/13_DDPG.ipynb)
+
 #机器学习/强化学习/异策略 #机器学习/强化学习/连续动作 #机器学习/强化学习/确定性策略
 
 DDPG是DQN的改进版，很重要的一点就是把DQN拓展到连续动作空间，DQN只需要向Q网络输入状态，但是DDPG中需要输入状态和动作，因为在连续动作中，动作的取值是无限的，因此就不能输出每个动作的Q值再选动作，而是创建一个[[Reinforcement Learning/PG\|策略网络]]作为演员，选择动作，与状态一起输入[[Reinforcement Learning/DQN\|Q网络]]，也就是评论员，Q网络只是评价这个状态动作对的价值。
