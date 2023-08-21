@@ -9,7 +9,7 @@
 
 梯度策略也要构建一个神经网络，但是该网络输出的是动作而不是价值，输入的还是state，输出均值和方差去建立一个正态分布，然后抽取动作，如[[Reinforcement Learning/PPO\|PPO]]算法，或者用softmax输出各个动作的概率，建立一个分类分布，抽取动作例如REINFORCE算法；或者输出一个值用tanh映射到-1~1的区间，再缩放到动作空间，例如[[Reinforcement Learning/DDPG\|DDPG]]和[[Reinforcement Learning/TD3\|TD3]]算法。在[[Reinforcement Learning/SAC\|SAC算法]]中，策略网络输出均值和方差建立一个分布，抽取动作，最后把动作映射到tanh上，经放缩后输出，同时输出一个对数动作概率。
 
-策略网络和Q网络的区别，参考[[Reinforcement Learning/PG和DQN的异同\|PG和DQN的异同]]。
+策略网络和Q网络的区别，参考[[Reinforcement Learning/相似概念梳理\|相似概念梳理]]。
 
 # 目标函数推导
 
