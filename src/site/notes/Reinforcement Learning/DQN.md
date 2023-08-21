@@ -33,7 +33,7 @@ $$
 
 $$Q_{target}=r+\gamma Q_{\omega^*}\left(s', \mathop{\operatorname{argmax}} \limits_{a'} Q_{\omega^*}(s',a')\right)$$
 
-完整损失函数（目标函数）可以写为 #机器学习/强化学习/目标函数 
+完整损失函数（目标函数）可以写为
 
 $$\omega' = \mathop{\operatorname{argmin}} \limits_{\omega} \frac{1}{2N} \sum^N_{i=1}\left[Q_{\omega}(s_i,a_i) - \left( r_i + \gamma \mathop{\operatorname{max}} \limits_{a'} Q_{\omega^*}(s_i',a')\right) \right]^2$$
 
