@@ -3,6 +3,8 @@
 ---
 
 
+代码 [07\_DQN.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/07_DQN.ipynb) [08\_DQN的改进.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/08_DQN%E6%94%B9%E8%BF%9B.ipynb)
+
 > 本笔记用于复习DQN及其改进技术以及过拟合研究，本文的环境都是OpenAI的开源库[gymnasium](https://gymnasium.farama.org/)的[Pendulum-v1](https://gymnasium.farama.org/environments/classic_control/pendulum/)，其给的最大奖励是0，也就是直立状态，其他状态都给负奖励，因此可以以0为基准讨论过拟合问题。
 
 ![](https://s2.loli.net/2023/07/16/X3mo92IDhGj16H7.gif)
