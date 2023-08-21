@@ -2,7 +2,12 @@
 {"dg-publish":true,"permalink":"/reinforcement-learning/a2-c/","dgPassFrontmatter":true}
 ---
 
+
+代码 [10\_Actor-Critic.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/10_Actor-Critic.ipynb)
+
 #机器学习/强化学习/同策略 #机器学习/强化学习/连续动作 #机器学习/强化学习/离散动作 
+
+# 演员评论员框架
 
 评论员网络，也就是价值网络V，采用和[[Reinforcement Learning/DQN\|DQN]]一样的时序差分的方式更新参数，即估计的本轮Q值往(本轮奖励+估计的下一轮Q值)的方向更新。
 
