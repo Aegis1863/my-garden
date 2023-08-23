@@ -229,3 +229,4 @@ $$
 ## 目标熵的设定 
 
  [原论文](https://arxiv.org/pdf/1801.01290.pdf)认为连续动作的目标熵等于动作空间的负值，torchrl中默认为`torch.prod(n_actions)`，另一篇[论文](https://arxiv.org/pdf/1910.07207.pdf)给出离散SAC，目标熵设置为$0.98(-\operatorname{log}(\frac{1}{|A|}))$，依据未说明，可能和交叉熵类似，但是总的来说不建议将SAC应用于离散动作环境。
+
