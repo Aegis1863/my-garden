@@ -9,7 +9,7 @@
 
 # 演员评论员框架
 
-评论员网络，也就是价值网络V，采用和[[Reinforcement Learning/DQN\|DQN]]一样的时序差分的方式更新参数，即估计的本轮Q值往(本轮奖励+估计的下一轮Q值)的方向更新。
+评论员网络，也就是价值网络 V，采用和 [[Reinforcement Learning/DQN\|DQN]] 一样的时序差分的方式更新参数，即估计的本轮 Q 值往(本轮奖励+估计的下一轮 Q 值)的方向更新。
 
 演员网络，即策略网络，用[[Reinforcement Learning/PG\|PG]]的方式更新。
 
