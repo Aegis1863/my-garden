@@ -83,7 +83,9 @@ $$
 J_\pi(\phi) = \mathbb{E}_{s_t\sim\mathcal{D},a\sim\pi_\phi}\left[\log\pi_\phi(a_t|s_t)-\frac{1}{\alpha}Q_{\bar \theta}(s_t,a_t)\right]
 $$
 
-这个目标函数是KL散度，表示两个分布之间的差异程度，减小这个目标函数就是试图使策略函数$\pi_k$的分布看起来更像是由函数Z标准化的Q函数的指数分布；其中$a_t$是重参数化来的，目的是让梯度正常更新，$\epsilon$是从高斯分布采样的噪音。对策略目标函数的参数$\phi$求导时，与$Z$无关，但是与Q有关，因为Q中的$a_t$是从策略中重参数化取得的，如下面公式
+这个目标函数是 KL 散度，表示两个分布之间的差异程度，减小这个目标函数就是试图使策略函数 $\pi_k$ 的分布看起来更像是由函数 Z 标准化的 Q 函数的指数分布；
+
+其中 $a_t$ 是重参数化来的，如下公式，目的是让梯度正常更新，$\epsilon$ 是从高斯分布采样的噪音。对策略目标函数的参数 $\phi$ 求导时，与 $Z$ 无关，但是与 Q 有关，因为 Q 中的 $a_t$ 是从策略中重参数化取得的，如下面公式
 
 $$
 a_t=f_\phi(\epsilon_t;s_t)=f^\mu_\phi(s_t)+\epsilon_t\cdot f^\mu_\phi(s_t)
@@ -153,7 +155,7 @@ $$
 
 再确定\alpha_T\\
 
-\alpha_T^* &= \underset{\alpha_T}{\operatorname{argmax}}\mathbb{E}(r(s_T, a_T)+\alpha_T\mathcal{H}(\pi^*_T)-\alpha_T\mathcal{H_0})\\
+\alpha_T^* &= \underset{\alpha_T}{\operatorname{argmin}}\mathbb{E}(r(s_T, a_T)+\alpha_T\mathcal{H}(\pi^*_T)-\alpha_T\mathcal{H_0})\\
 \end{align}
 $$
 
@@ -170,9 +172,8 @@ $$
 &\operatorname{s.t.} ~~ \mathbb{E}_{(s_{T-1},a_{T-1})\sim\rho_{\pi_{T-1}}} \left[-\operatorname{log}(\pi(a_{T-1}|s_{T-1})) \right] \geq \mathcal{H}_0
 \end{align}
 $$
---------------------------插入内容----------------------------
 
-此时，有$Q_{soft}$函数的迭代公式如下，式子里面就不写$soft$了
+*为了找出规律*， $r (s_{T-1}, a_{T-1})+r (s_{T}, a_{T})$ 可以根据 $Q_{soft}$ 函数的迭代公式修改：
 $$Q_{T-1}(s_{T-1}, a_{T-1}) = r(s_{T-1}, a_{T-1})+\gamma\mathbb{E}[r(s_T,a_T)+\alpha_T\mathcal{H}(\pi_T)]$$
 上式是标准的$Q_{soft}$值目标式，但是在这里的操作中，$\gamma$被去掉了，[提出自动调节温度因子的SAC原论文](https://arxiv.org/pdf/1812.05905.pdf)就没有写。
 
@@ -184,7 +185,6 @@ $$Q_{T-1}(s_{T-1}, a_{T-1})-\alpha_T\mathcal{H}(\pi_T) = r(s_{T-1}, a_{T-1})+\ma
 
 **个人想法**：因为这样可以把第一个优化中已经求出来的 $\pi_T$ 带入$\mathcal{H}(\pi_T)$ ，并且 $Q_{T-1}(s_{T-1}, a_{T-1})$ 根据第一次优化得出的结果，可以求出来，所以这两个都是已知的常数项了。在第一个优化问题中，[原论文公式（14）处](https://arxiv.org/pdf/1812.05905.pdf)也直接去掉了reward项，但是在[Joy RL的推导](https://johnjim0816.com/joyrl-book/#/ch13/main?id=%e8%87%aa%e5%8a%a8%e8%b0%83%e8%8a%82%e6%b8%a9%e5%ba%a6%e5%9b%a0%e5%ad%90)中，reward保留了，本文参考沿用该写法，本文认为这样更严谨——因为reward并不是人为确定的，所以不能视为常数，而Q函数和熵都是可以通过已知数据人为算出来的。
 
---------------------------插入结束----------------------------
 
 因此可以转化为下面这个$\operatorname{max}$式子，所以在下面式子第二个等号转化为对偶函数时，加上拉格朗日乘子，注意：带星号的都视为常数，有
 
@@ -221,7 +221,7 @@ J(\alpha)
 $$
 其中$-\log \pi_t(a_t|\pi_t)$也就是熵`entropy`，对$\alpha$求导，就等于小括号里面的动作熵减去目标熵，所以这就是要使得动作熵靠近目标熵，使得$J(\alpha)$变小。
 
-参考下面策略目标函数，动作熵太大，大于目标熵了，梯度就是正的，$\alpha$目标函数在梯度下降时就会减小$\alpha$，就是指策略给的动作的概率比较低，拿不准应该怎么办，需要减小$\alpha$使得模型专注于获得更高的回报，也就是尽可能提升动作确定性；而动作熵太小，就意味着策略对某一个动作过于肯定，容易造成过拟合，就调整$\alpha$变大，$\alpha$变大就倾向于要求动作熵变大，等于希望动作概率降低，让模型重视探索。
+参考下面策略目标函数，动作熵太大，大于目标熵了，梯度就是正的，$\alpha$ 目标函数在梯度下降时就会减小 $\alpha$，就是指策略给的动作的概率比较低，拿不准应该怎么办，需要减小 $\alpha$ 使得模型专注于获得更高的回报，也就是尽可能提升动作确定性；而动作熵太小，就意味着策略对某一个动作过于肯定，容易造成过拟合，就调整 $\alpha$ 变大，$\alpha$ 变大就倾向于要求动作熵变大，等于希望动作概率降低，让模型重视探索。
 
 $$
 \pi^* = \underset{\pi}{\operatorname{argmax}}\mathbb{E}_{\pi}\left[\underset{t}{\sum}r(s_t,a_t)+\alpha\mathcal{H}(\pi(\cdot|s_t)) \right]
