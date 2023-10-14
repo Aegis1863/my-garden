@@ -4,7 +4,7 @@
 
 # 入门介绍
 
-强化学习不是指一个具体模型，而是指代强化这种学习方法，在概念上平行于有监督、无监督学习。强化学习在当今机器学习研究中占比没有那么大，主要是因为其学习成本高，并且现实落地比较少，目前比较有名的强化学习应用有 Alpha Go，击败人类围棋世界冠军柯洁，还有 Alpha Star，这是应用在星际争霸中的游戏 AI。但也正是因为强化学习的研究相对较少，所以更容易水论文（不是），代价就是要学习更多东西。
+强化学习不是指一个具体模型，而是指代强化这种学习方法，在概念上平行于有监督、无监督学习。强化学习在当今机器学习研究中占比没有那么大，主要是因为其学习成本高，并且现实落地比较少，目前比较有名的强化学习应用有 Alpha Go，击败人类围棋世界冠军柯洁，还有 Alpha Star，这是应用在星际争霸中的游戏 AI。但也正是因为强化学习的研究相对较少，所以更容易水论文（不是🥸，代价是要学习更多东西。
 
 本文档提供从入门学习路线开始详细介绍各个预备知识的学习方法、路线和资料，最后会提供强化学习的学习资料，但并不详细介绍每一种强化学习算法，该内容可以在其他小节阅读。
 
@@ -18,7 +18,7 @@ Python 非常重视代码规范问题，力求写规范代码，保证代码易�
 
 ### 查阅文档解决问题
 
-在编程中可能遇到很多报错，要尝试理解报错提示，看看能不能自己直接解决，也可以在网络上搜索该报错，看看别人是不是已经遇到过了，并且是怎么解决的。实际上大部分报错都已经有人遇到过了；但是，推荐先查阅官方文档，例如 pytorch 的官方文档是 [PyTorch documentation](https://pytorch.org/docs/master/)，也有 [PyTorch 中文文档](https://pytorch.apachecn.org/) 但时效性较差。当想知道 Pytorch 包中 `torch.nn.Dropout()` 的用法时，可以在官方文档中搜索其说明，但也可以在百度或者谷歌中搜索从而找到第三方资料，很多学习者会通过在线博客的形式对该函数作解释说明。
+在编程中可能遇到很多报错，要尝试理解报错提示，看看能不能自己直接解决，也可以在网络上搜索该报错，看看别人是不是已经遇到过了，并且是怎么解决的。实际上大部分报错都已经有人遇到过了；但是，推荐先查阅官方文档，例如 pytorch 的官方文档是 [PyTorch documentation](https://pytorch.org/docs/master/)，也有 [PyTorch 中文文档](https://pytorch.apachecn.org/) 但时效性较差。比如想知道 Pytorch 包中 `torch.nn.Dropout()` 的用法时，可以在官方文档中搜索其说明，但也可以在百度或者谷歌中搜索从而找到第三方资料，很多学习者会通过在线博客的形式对该函数作解释说明。
 
 网络上有很多技术交流讨论群，切忌不作任何说明就把报错信息以文本或者截图甚至照片的形式发到群里，学会提问很重要。
 
@@ -28,7 +28,7 @@ python 代码是可以写单行脚本去运行的，但一定要在学习基础�
 
 ### 解释器
 
-对于学习路线是数据科学方向的，推荐先使用 Python 自带的 idle 学习最基本的编程，然后再使用 anaconda 集成环境中的 jupyter notebook，然后可以尝试功能更多的 jupyter lab；此外，anaconda 中还有 spyder，笔记类似其他编程语言的解释器，可以体验一下；如果已经对 python 编程比较熟悉，并且对 jupyter 等工具也比较熟悉，可以使用 vscode，至此已是巅峰~。此处提到的解释器都是免费开源使用。
+对于学习路线是数据科学方向的，推荐先使用 Python 自带的 idle 学习最基本的编程，然后再使用 anaconda 集成环境中的 jupyter notebook，然后可以尝试功能更多的 jupyter lab；此外，anaconda 中还有 spyder，笔记类似其他编程语言的解释器，可以体验一下；如果已经对 python 编程比较熟悉，并且对 jupyter 等工具也比较熟悉，可以使用 vscode，至此已是巅峰~。此处提到的解释器都是免费开源使用。对于有经验并且动手能力比较强的学习者来说，可以直接上手vscode。
 
 PyCharm 适合学习路线为开发的学习者使用，否则一概不推荐。PyCharm 有免费版和付费版，区别很大。
 
@@ -108,7 +108,7 @@ Python 大部分资料都是开源的，这意味着不仅是免费的，而且�
 	* 原本用来处理时序数据，后来也被拓展到图像领域。
 	* 当今最先进模型（GPT）的基本机制，越来越多模型在蹭注意力机制的热度。但是对于中小型任务来说并没有太大作用，有时候效果甚至不如 LSTM。
 
-## 深度学习前沿论文
+## 深度学习前沿论文解读
 
 * [如何读论文](https://www.bilibili.com/video/BV1H44y1t75x) 李沐带你读论文系列，解读了近年几十篇最前沿论文，包含大部分现代深度学习技术。
 
@@ -118,12 +118,13 @@ Python 大部分资料都是开源的，这意味着不仅是免费的，而且�
 	* 《强化学习导论》——Sutton（英文），缺少现代深度强化学习知识。
 	* 《Easy RL》蘑菇书，重点看理论和公式推导。
 	* 《动手学强化学习》，代码较好。
-	* OpenAI 的 [spinning up](https://spinningup.openai.com/en/latest/spinningup/rl_intro.html) 是时效性更好的强化学习在线资料，包括教学和论文、视频等资料汇总，包含最前沿技术研究，需要自己在网站中查找一下，但无实体书和官方中文。
+	* OpenAI 的 [spinning up](https://spinningup.openai.com/en/latest/spinningup/rl_intro.html) 是一个还不错的资料，但内容比较杂，并且也并没有经常维护，里面包括基本算法教学和重要论文、视频等资料汇总，需要自己在网站中查找一下，但无实体书和官方中文。
 * 强化学习入门环境
 	* [Gymnasium](https://gymnasium.farama.org)，OpenAI 提供的简单环境，简称 Gym，包含几十个小游戏，有简单的也有困难的，方便测试强化学习算法，目前网上大部分资料都是 0.26 之前版本（调用时写 Gym），但最新版本已经到 0.28 以上（调用时写 Gymnasium，但口头上也简称 Gym），修改了少数接口输出，但也导致大部分已有资料中的代码无法直接复用，需要进行一些修改。
 * 高级强化学习封装包
 	* OpenAI 的 [stable-baselines](https://stable-baselines.readthedocs.io/en/master/index.html) ，无需手写具体算法，提供了高级封装，方便在简单情况下进行快速测试和实验，但建议先学具体算法实现后再学习这个，因为并不能快速 0 门槛上手，需要有一些基础。
+	* 也有其他民间组织开源在github的强化学习高级封装框架，可以在github自行查找。
 * 自定义环境
 	* 可以模仿 Gym 的环境直接写一个类封装，适合本地测试，并且在绝大部分适合也可以迁移使用，比较容易。
-	* [Using Custom Environments — Stable Baselines](https://stable-baselines.readthedocs.io/en/master/guide/custom_env.html) ，stable-basline 提供的自定义环境的教学，基本也是按照 Gym 的接口，比如 reset 和 step 方法，并且提供了一个非常简单易懂的 [dome](https://github.com/openai/gym/blob/master/docs/creating-environments.md) 可以在在线笔记本中运行，以此学习如何建立一个定制环境。
+	* [Using Custom Environments — Stable Baselines](https://stable-baselines.readthedocs.io/en/master/guide/custom_env.html) ，stable-basline 提供的自定义环境的教学，基本也是按照 Gym 的设计流程和模式，提供了一个编写自己环境的 [dome](https://colab.research.google.com/github/araffin/rl-tutorial-jnrr19/blob/master/5_custom_gym_env.ipynb) 可以在在线笔记本中运行，以此学习如何建立一个定制环境。
 	* [Make your own custom environment](https://gymnasium.farama.org/tutorials/gymnasium_basics/environment_creation/) ，Gymnasium 关于自定义环境的官方教程，即完全按照 Gym 的设计模式进行编写，需要打包操作，涉及 Python 高级方法，比较麻烦但是非常严谨。
