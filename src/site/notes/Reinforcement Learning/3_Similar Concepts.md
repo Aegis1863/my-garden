@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/reinforcement-learning/3-similar-concepts/","dgPassFrontmatter":true}
 ---
 
-# PG和DQN
+# 1. PG和DQN
 
 [[Reinforcement Learning/1_DQN#^0cba58\|深度Q网络]]输出的是价值，所以有时候也说成价值网络V，它的目的是评价当前状态，采取各个离散动作的价值；或者，如果是连续动作下，它评价的是当前状态和采取某个动作的价值。
 #机器学习/强化学习/Q网络 
@@ -10,7 +10,7 @@
 [[Reinforcement Learning/2_Policy Gradient\|策略网络]]输出的是动作，可以直接输出动作，连续动作可以用tanh映射输出并且缩放到动作空间上，也可以输出均值方差来构造一个连续或离散的分布，然后从里面抽动作；离散动作还可以直接通过softmax输出动作概率，再抽取动作。
 #机器学习/强化学习/策略网络
 
-# 目标函数和损失函数
+# 2. 目标函数和损失函数
 
 我们建立模型之后一般不会写出`目标函数`，但是目标函数是客观存在的，torch可以对目标函数进行自动微分，求出梯度之后就可以更新梯度。
 
