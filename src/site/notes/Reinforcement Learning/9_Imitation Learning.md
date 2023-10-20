@@ -3,12 +3,12 @@
 ---
 
 代码 [15\_模仿学习.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/15_%E6%A8%A1%E4%BB%BF%E5%AD%A6%E4%B9%A0.ipynb)
-# 行为克隆
+# 1. 行为克隆
 >behavior clone
 
 用一个专家轨迹作为labels，训练方法和深度学习一样，专家可以是人，也可以是训练好的模型。行为克隆效果一般不会很好，因为每次环境反馈的不会完全一样，只有在专家碰到过的那个行为分布上，才会有比较好的效果，一旦碰到专家没碰到过的情况，智能体就只能随机选择动作，可能会有比较大的错误，这种错误会一直积累，所以泛化性很差，如果收集了大量专家数据并且进行训练，效果可能回比较好。
 
-# 生成对抗模仿学习
+# 2. 生成对抗模仿学习
 >generative adversarial imitation learning，GAIL
 
 前面还是要写[[Reinforcement Learning/5_PPO\|5_PPO]]算法并且定义agent，要生成专家数据，存储专家状态和动作表，agent还是要自己和环境交互的，只是在交互中学习，使得agent的动作分布逐渐接近专家的动作分布。例如我们需要定义一个[[Reinforcement Learning/5_PPO\|5_PPO]]算法，定义一个GAIL算法，里面有判别器。
