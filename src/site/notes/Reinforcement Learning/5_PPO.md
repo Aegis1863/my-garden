@@ -5,13 +5,13 @@
 代码 [12\_PPO.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/12_PPO.ipynb)
 
 #机器学习/强化学习/同策略 #机器学习/强化学习/连续动作 #机器学习/强化学习/离散动作 
-# 网络结构
+# 1. 网络结构
 
 和优势演员评论员机制一样，评论员采用[[Reinforcement Learning/1_DQN\|Q网络]]，演员采用[[Reinforcement Learning/2_Policy Gradient\|梯度网络]]。
 
 不同点在于引入重要性采样和裁剪，重要性采样使得内部可以使用异策略的方法，让state不具有序列相关性，而且通过裁剪的方法确保了每次更新幅度不会过大。
 
-# 重要性采样
+# 2. 重要性采样
 { #86830f}
 
 
@@ -39,7 +39,7 @@ $$
 J^{\theta^{\prime}}(\theta)=\mathbb{R}_{(s_t,a_ t)\sim \pi_{\theta^{\prime}}}\left[{\frac{p_{\theta}\left(a_t|s_t\right)}{p_{\theta^{\prime}}\left(a_t|s_{t}\right)}}A^{\theta^{\prime}}\!\left(s_t,a_t\right)\right]
 $$
 
-# PPO截断
+# 3. PPO截断
 #机器学习/强化学习/裁剪
 
 再加上截断技巧，演员网络损失函数如下（未取均值），应取使其最大化，因此代码中还加了负号
