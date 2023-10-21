@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/9-imitation-learning/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/reinforcement-learning/9-imitation-learning/","dgPassFrontmatter":true,"created":"2023-08-08T19:03:49.398+08:00","updated":"2023-10-20T15:32:54.812+08:00"}
 ---
 
 代码 [15\_模仿学习.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/15_%E6%A8%A1%E4%BB%BF%E5%AD%A6%E4%B9%A0.ipynb)
