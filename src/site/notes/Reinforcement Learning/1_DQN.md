@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/1-dqn/","dgPassFrontmatter":true,"created":"2023-08-07T00:33:22.497+08:00","updated":"2023-10-20T15:31:51.403+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/1-dqn/","dgPassFrontmatter":true,"created":"2023-08-07T00:33:22.497+08:00","updated":"2023-10-22T18:58:38.645+08:00"}
 ---
 
 
@@ -13,7 +13,7 @@
 { #0cba58}
 
 ## 1.1. 什么是Q网络
-#机器学习/强化学习/Q网络 #机器学习/强化学习/异策略 
+#机器学习/强化学习/价值网络 #机器学习/强化学习/异策略 
 
 Q 网络接收 state 的输入，如果是离散动作，则输出每个动作对应的 Q 值，可以选择 Q 值最大的那个动作；如果是连续动作，由于动作的取值是无限的，就需要确定一个动作取值和状态一起输入网络，Q 网络就只输出价值，确定动作通常依靠[[Reinforcement Learning/2_Policy Gradient\|策略网络]]。
 
