@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/9-imitation-learning/","dgPassFrontmatter":true,"created":"2023-08-08T19:03:49.398+08:00","updated":"2023-10-20T15:32:54.812+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/9-imitation-learning/","dgPassFrontmatter":true,"created":"2023-08-08T19:03:49.398+08:00","updated":"2023-10-22T19:04:53.735+08:00"}
 ---
 
 代码 [15\_模仿学习.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/15_%E6%A8%A1%E4%BB%BF%E5%AD%A6%E4%B9%A0.ipynb)
@@ -11,7 +11,7 @@
 # 2. 生成对抗模仿学习
 >generative adversarial imitation learning，GAIL
 
-前面还是要写[[Reinforcement Learning/5_PPO\|5_PPO]]算法并且定义agent，要生成专家数据，存储专家状态和动作表，agent还是要自己和环境交互的，只是在交互中学习，使得agent的动作分布逐渐接近专家的动作分布。例如我们需要定义一个[[Reinforcement Learning/5_PPO\|5_PPO]]算法，定义一个GAIL算法，里面有判别器。
+前面还是要写 [[Reinforcement Learning/5_PPO\|PPO]] 算法并且定义 agent，要生成专家数据，存储专家状态和动作表，agent 还是要自己和环境交互的，只是在交互中学习，使得 agent 的动作分布逐渐接近专家的动作分布。例如我们需要定义一个 [[Reinforcement Learning/5_PPO\|PPO]] 算法，定义一个 GAIL 算法，里面有判别器。
 
 先收集agent和专家的状态、动作序列，再训练判别器，向判别器分别输入两者的状态、动作序列，判别器给出一个对数化概率`log_prob`，越靠近1代表越像agent，越靠近0则代表越像专家，也就是说agent轨迹的label就是1，专家轨迹的label就是0，因此把两者的交叉熵损失加起来就是判别器的总损失，优化器对这个总损失进行梯度下降训练判别器，需要注意的是，判别器是不需要预训练的，与RL同步训练即可。
 
