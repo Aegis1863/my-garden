@@ -1,8 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/10-model-predict-control/","dgPassFrontmatter":true,"created":"2023-10-20T15:20:38.227+08:00","updated":"2023-10-20T15:32:57.678+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/10-model-predict-control/","dgPassFrontmatter":true,"created":"2023-10-20T15:20:38.227+08:00","updated":"2023-10-22T19:03:16.078+08:00"}
 ---
 
 代码 [16\_模型预测控制.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/16_%E8%A1%8C%E4%B8%BA%E9%A2%84%E6%B5%8B%E6%8E%A7%E5%88%B6.ipynb)
+
 # 1. 模型预测控制
+#机器学习/强化学习/异策略 
 
+该方法在控制论中是有理论基础的，参考 [MPC模型预测控制器](https://www.bilibili.com/video/BV1cL411n7KV)。
 
+该方法的改进在于建立了一个集成的神经网络，用于拟合环境，这个集成神经网络就称为假环境（fake_env）。先进行探索，会获得多个轨迹，这里经验池存的是整个轨迹而非单个经验了，利用这些轨迹去训练 fake_env ，就可以拟合环境。
+
+换个角度看，环境也可以当作是一个函数，输入的是状态和动作，输出的是下一个状态和奖励，因此利用从真实环境采样的轨迹，就可以做有监督学习。当然这个集成环境还需要注意一些细节，代码层面是比较复杂的。
+
+一旦训练好 fake_env ，在与真实环境交互之前，需要先在假环境中推理几步，一般可以推五步，因为环境是集成的，因此会有很多轨迹，选取其中平均奖励最高的一批轨迹，每一批轨迹中取其第一个动作，再把这些动作求均值，作为当前要在真实环境中要执行的动作。
+
+这个方法需要在真实环境迭代的次数是比较少的，但是训练假环境是需要比较多的资源和时间的。
