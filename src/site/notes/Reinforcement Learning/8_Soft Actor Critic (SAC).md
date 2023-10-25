@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/8-soft-actor-critic-sac/","dgPassFrontmatter":true,"created":"2023-08-07T00:33:22.499+08:00","updated":"2023-10-20T15:32:49.037+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/8-soft-actor-critic-sac/","dgPassFrontmatter":true,"created":"2023-08-07T00:33:22.499+08:00","updated":"2023-10-25T13:59:23.929+08:00"}
 ---
 
 代码 [14\_SAC.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/14_SAC.ipynb)
@@ -83,7 +83,11 @@ J_\pi(\phi) = \mathbb{E}_{s_t\sim\mathcal{D},a\sim\pi_\phi}\left[\log\pi_\phi(a_
 $$
 这个目标函数是 KL 散度，表示两个分布之间的差异程度，减小这个目标函数就是试图使策略函数 $\pi_k$ 的分布看起来更像是由函数 Z 标准化的 Q 函数的指数分布；
 
+对策略目标函数的参数 $\phi$ 求导时，与 $Z$ 无关，但是与 Q 有关，因为 Q 中的 $a_t$ 是从策略中重参数化取得的。
+
 ## 1.3. 重参数技巧
+
+SAC 算法的 actor 输出动作，其中需要重参数化采样获得动作，这样才可以传导梯度，critic 接收动作，所以传导梯度是需要动作的，如果按照网络输出构建一个分布再采样，是无法依据动作往前传递梯度的，试想，一个被抽样的样本如何对其所属分布的参数求导呢？这是不可能的，所以必须要重参数化。
 
 其中 $a_t$ 是重参数化来的，如下公式，目的是让梯度正常更新，我们定义一个 $\epsilon$ ，它是从高斯分布采样的噪音，重参数技巧的实现如下,
 $$
@@ -95,8 +99,6 @@ $$
 其中 $\mu$ 和 $log\_var$ 都是策略网络输出的，$log\_var$ 是对数方差，$\epsilon_t$ 是第 t 次采样给方差加上的噪音，这个噪音相当于常数了；此时动作 $a_t$ 也是可以求导的。
 
 但是如果依据 $\mu$ 和 $log\_var$ 建立一个新的分布再采样一个动作，这个动作与参数 $\mu$ 和 $log\_var$ 是没有关系的，也就不能传导梯度过去，所以要重参数化。
-
-对策略目标函数的参数 $\phi$ 求导时，与 $Z$ 无关，但是与 Q 有关，因为 Q 中的 $a_t$ 是从策略中重参数化取得的。
 
 ## 1.4. 动作被压缩后概率密度的变化
 
