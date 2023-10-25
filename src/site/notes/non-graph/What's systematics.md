@@ -1,10 +1,10 @@
 ---
-{"dg-publish":true,"permalink":"/non-graph/what-s-systematics/","dgPassFrontmatter":true,"created":"2023-10-25T09:58:53.631+08:00","updated":"2023-10-25T20:28:59.568+08:00"}
+{"dg-publish":true,"permalink":"/non-graph/what-s-systematics/","dgPassFrontmatter":true,"created":"2023-10-25T09:58:53.631+08:00","updated":"2023-10-25T20:29:58.524+08:00"}
 ---
 
 # 系统科学、老三论和人工智能算法
 
-> 郭雷《系统学是什么》阅读总结。
+> 李孙博闻关于郭雷院士《系统学是什么》阅读总结。
 
 # 1. 前言
 
