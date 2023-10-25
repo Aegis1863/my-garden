@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/8-soft-actor-critic-sac/","dgPassFrontmatter":true,"created":"2023-08-07T00:33:22.499+08:00","updated":"2023-10-25T13:59:23.929+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/8-soft-actor-critic-sac/","dgPassFrontmatter":true,"created":"2023-08-07T00:33:22.499+08:00","updated":"2023-10-25T15:00:19.266+08:00"}
 ---
 
 代码 [14\_SAC.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/14_SAC.ipynb)
@@ -43,9 +43,9 @@ Q^\pi_{soft}(s,a)
 \end{align}
 $$
 
-## 1.1. 演员的目标函数
+## 1.1. 评论员的目标函数
 
-对应代码`SAC`类中的`calc_target`方法，也就是在[[Reinforcement Learning/1_DQN\|Q网络]]的基础上改为软Q网络，公式为
+对应代码 `SAC` 类中的 `calc_target` 方法，也就是在 [[Reinforcement Learning/1_DQN\|Q网络]]的基础上改为软 Q 网络，演员网络的目标函数为
 
 $$
 \begin{align}
@@ -57,9 +57,9 @@ $$
 
 把上一节提到的 $V^{\pi}_{soft}(s)$ 的公式带入到第一个式子就得到第二个式子，其中 $Q_{\bar \theta}$ 是两个评论员网络给出的价值评价的较小的那个，这里对 $\theta$ 求梯度是很简单的。
 
-## 1.2. 评论员的目标函数
+## 1.2. 演员的目标函数
 
-即策略网络Policy，公式为
+即策略网络 Policy，目标函数为
 
 $$
 \begin{align}
@@ -83,7 +83,7 @@ J_\pi(\phi) = \mathbb{E}_{s_t\sim\mathcal{D},a\sim\pi_\phi}\left[\log\pi_\phi(a_
 $$
 这个目标函数是 KL 散度，表示两个分布之间的差异程度，减小这个目标函数就是试图使策略函数 $\pi_k$ 的分布看起来更像是由函数 Z 标准化的 Q 函数的指数分布；
 
-对策略目标函数的参数 $\phi$ 求导时，与 $Z$ 无关，但是与 Q 有关，因为 Q 中的 $a_t$ 是从策略中重参数化取得的。
+对策略目标函数的参数 $\phi$ 求导时，与 $Z$ 无关，但是与 Q 是有关的，因为 Q 中的 $a_t$ 是从策略中重参数化取得的。
 
 ## 1.3. 重参数技巧
 
