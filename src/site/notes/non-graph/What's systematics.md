@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/non-graph/what-s-systematics/","dgPassFrontmatter":true,"created":"2023-10-25T09:58:53.631+08:00","updated":"2023-10-25T20:08:07.024+08:00"}
+{"dg-publish":true,"permalink":"/non-graph/what-s-systematics/","dgPassFrontmatter":true,"created":"2023-10-25T09:58:53.631+08:00","updated":"2023-10-25T20:12:20.031+08:00"}
 ---
 
 # 系统学是什么
@@ -30,7 +30,7 @@
 
 再粗浅谈一谈信息论。生活中我们听到某个绯闻或者奇怪的事情，都会觉得“信息量”很大，这就是直觉上的信息熵：“太阳明天从东边升起”这件事发生的概率几乎是 100%，因此不会引起人们的重视；但是如果说“苹果公司停止生产手机”，就很容易引起关注，因为这件事发生的概率是很小的，即便这两句话的字数基本一样，写起来笔画也差不多，但是信息量是不一样的。
 
-信息论不考虑一段消息的重要性或内在意义，因为这些是数据的质量问题而不是数据量，比如文本长度和可读性方面的问题。下面写一点枯燥的公式推导，香农的论文 [《通信的数学理论》](https://cdn.l7audiolab.com/wp-content/uploads/2022/06/%E9%80%9A%E4%BF%A1%E7%9A%84%E6%95%B0%E5%AD%A6%E7%90%86%E8%AE%BA.pdf)中首次提出信息熵, 定义为
+信息论不考虑一段消息的重要性或内在意义，因为这些是数据的质量问题而不是数据量，比如文本长度和可读性方面的问题。下面写一点枯燥的公式推导，香农的论文 [《通信的数学理论》](https://cdn.l7audiolab.com/wp-content/uploads/2022/06/%E9%80%9A%E4%BF%A1%E7%9A%84%E6%95%B0%E5%AD%A6%E7%90%86%E8%AE%BA.pdf)中首次提出信息熵，定义为
 $$H(X)=\mathbb{E}_x[I(x)]=\sum_{x\in\mathcal{X}}p(x)\mathrm{log}_2\left(\frac{1}{p(x)} \right)$$
 其中 $p$ 是概率密度函数，如果单位是比特，那么对数的底是 2，如果不强调单位，可以直接用自然常数 $e$ 为底。公式中 $\sum_{x\in\mathcal{X}}p(x)$ 可以写成期望形式，$\mathrm{log}(\frac{1}{p(x)})$，变成 $-\mathrm{log}p(x)$，式子化简为
 $$
