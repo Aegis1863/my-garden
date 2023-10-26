@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/non-graph/what-s-systematics/","dgPassFrontmatter":true,"created":"2023-10-25T09:58:53.631+08:00","updated":"2023-10-26T13:59:42.664+08:00"}
+{"dg-publish":true,"permalink":"/non-graph/what-s-systematics/","dgPassFrontmatter":true,"created":"2023-10-25T09:58:53.631+08:00","updated":"2023-10-26T14:00:22.674+08:00"}
 ---
 
 <h1><center>系统科学、老三论和机器学习</center></h1>
@@ -72,7 +72,7 @@ $$
 
 接下来，郭院士提到系统功能的“涌现”机制，这就不得不如让人想到 2022 年底出现至今热度不减的 ChatGPT。众所周知，这是当今自然语言处理（NLP）领域的最先进成果，然而其诞生的过程却很少被人们关注。在过去十几年里，NLP 发展比较平缓，谷歌等许多国内外大厂都投入大量资金在 BERT 模型中，OpenAI 公司则尝试 GPT 这一技术路线，他们所做的无非是持续加大硬件投入，持续增加训练数据，持续扩大模型参数，通常我们会认为，模型的语言能力是随着投入的加大线性增加的，然而在参数达到某个数量级时，其语言能力却发生了质的飞跃，这便是涌现机制。
 
-举例来说，BIG-G 是一种具有仅解码器 Transformer 架构的语言模型，此外，emoji_movie 是 BIG 基准测试中的一项任务，其中一系列表情符号描述了一部特定的电影，任务是根据序列猜测电影，其特征和标签示例如下图。
+举例来说，BIG-G 是一种具有仅解码器 Transformer 架构的语言模型，此外，emoji_movie 是 BIG 基准测试中的一项任务，其中一系列表情符号描述了一部特定的电影，任务是根据 Emoji 表情序列猜测电影，其特征和标签示例如下图。
 ![](https://s2.loli.net/2023/10/26/y5UhZDTxGE1nFjv.jpg)
 下面我们可以看到 BIG-G 在不同尺度的 emoji_movie 上的表现。
 
