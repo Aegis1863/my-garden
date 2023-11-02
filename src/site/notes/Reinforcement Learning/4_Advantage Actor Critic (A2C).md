@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/4-advantage-actor-critic-a2-c/","dgPassFrontmatter":true,"created":"2023-08-07T17:26:17.787+08:00","updated":"2023-10-20T15:32:24.123+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/4-advantage-actor-critic-a2-c/","dgPassFrontmatter":true,"created":"2023-08-07T17:26:17.787+08:00"}
 ---
 
 
