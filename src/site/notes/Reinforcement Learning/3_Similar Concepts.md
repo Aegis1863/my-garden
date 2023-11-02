@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/3-similar-concepts/","dgPassFrontmatter":true,"created":"2023-08-17T23:08:28.997+08:00","updated":"2023-10-25T14:00:46.022+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/3-similar-concepts/","dgPassFrontmatter":true,"created":"2023-08-17T23:08:28.997+08:00"}
 ---
 
 # 1. 价值策略和梯度策略
