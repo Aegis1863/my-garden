@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/6-ddpg/","dgPassFrontmatter":true,"created":"2023-08-07T17:31:15.584+08:00","updated":"2023-10-22T15:51:41.675+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/6-ddpg/","dgPassFrontmatter":true,"created":"2023-08-07T17:31:15.584+08:00"}
 ---
 
 代码 [13\_DDPG.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/13_DDPG.ipynb)
