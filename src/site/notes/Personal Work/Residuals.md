@@ -55,10 +55,7 @@ BN 表示批量归一化，ReLU 和 tanh 表示激活函数，在图残差单元
 
 ![image.png](https://s2.loli.net/2023/11/08/wqu7rgKH8MtNPz3.jpg)
 如果很多权重值都是小于1的，累乘起来就会导致偏导数值趋近于0，由于计算机能够处理的小数位是有限的，一旦一个浮点数太小，计算机就只能认为是0，导致梯度消失，网络输出 `nan` 最终报错，但是一旦把输出改成 $f_w(x)+x$，其计算方法就变成下面的方式。
-
-$$
-    \frac{\partial{(f_w(x)+x)}}{\partial{x}} = \frac{\partial{f_w(x)}}{\partial{x}} + 1
-$$
+$$\frac{\partial(f_w(x)+x)}{\partial x}=\frac{\partial f_w(x)}{\partial x}+1$$
 就算 $f_w(x)$ 的梯度很小，这个偏导也是接近1的，从而避免了梯度消失问题。在这以后，几乎所有深度 CNN、RNN、LSTM 网络，AlphaGo 算法以及后来的 Transformer 架构无一不采用残差连接的方法构建深度网络，此时深度学习才名副其实成为“深度学习”。
 
 这样的改进看起来是很简单的，在代码中构建也的确很简单，只需要在输出层加上一个原本的输入值即可，但是要论证残差连接的合理性仍然有大量工作可以做，比如，残差连接是直接把 x 加到输出层，我们能否在中间加入线性变换。
@@ -76,18 +73,10 @@ x_{l+1}=\lambda_lx_l+f_w^l(x_l)
 $$
   
 对于更深的 L 层
-$$
-x_L=\left(\prod_{i=l}^{L-1}\lambda_i\right)x_l+\sum_{i=l}^{L-1}\hat{f_w^l}(x_l)
-$$
+$$x_L=\left(\prod_{i=l}^{L-1}\lambda_i\right)x_l+\sum_{i=l}^{L-1}\hat{f}_w^l(x_l)$$
   
 损失函数 $\epsilon$ 对 $x_l$ 求偏导得
-$$
-    \frac{\partial\varepsilon}{\partial x_l}=
-
-    \frac{\partial\varepsilon}{\partial x_L}\left(\left(\prod_{i=l}^{L-1}\lambda_i\right)+\frac{\partial}{\partial x_l}\hat{f_w^l}(x_l)\right)
-
-$$
-
+$$\frac{\partial\varepsilon}{\partial x_l}=\frac{\partial\varepsilon}{\partial x_L}\left(\left(\prod_{i=l}^{L-1}\lambda_i\right)+\frac\partial{\partial x_l}\hat{f}_w^l(x_l)\right)$$
 上面公式反映了两个属性：
 
 1. 当 $\lambda > 1$ 时，很有可能发生梯度爆炸;
