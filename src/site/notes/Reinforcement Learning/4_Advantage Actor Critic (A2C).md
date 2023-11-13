@@ -20,7 +20,7 @@
 
 [[Reinforcement Learning/1_DQN#^b4e4d9\|优势函数]] 的思想在 Dueling DQN 中已经提到过了，那里需要 Q 值，所以把 $A = Q - V​​$ 变成 $Q=V+A$，其中 A 也是由 Q 网络的一部分估计的，这里是改进的优势函数，需要的就是 $A = Q - V​​$，其中 Q 来自演员网络，V 来自评论员网络。
 
-目标函数就是动作的概率乘以优势函数 A，即 $log\_prob(action)* A$，**推导待补充**，优势函数原本是每轮以及后续获得的折算奖励（G）减去一个基线 b，也就是 $A = G-b$，但是这个折算是比较麻烦的，因为有 $E(G) = Q_{\pi_{\theta}}(s^n_t,a^n_t)$，所以可以考虑用 Q 替代 G，而 $b$ 一般是状态价值函数 $V_{\pi_{\theta}}(s_t)$，因此优势函数变成
+目标函数就是动作的概率乘以优势函数 A，即 $log\_prob(action)* A$，参考 [[Reinforcement Learning/2_Policy Gradient\|策略梯度]]，优势函数原本是每轮以及后续获得的折算奖励（G）减去一个基线 b，也就是 $A = G-b$，但是这个折算是比较麻烦的，因为有 $E(G) = Q_{\pi_{\theta}}(s^n_t,a^n_t)$，所以可以考虑用 Q 替代 G，而 $b$ 一般是状态价值函数 $V_{\pi_{\theta}}(s_t)$，因此优势函数变成
 $$A = Q_{\pi_{\theta}}(s^n_t,a^n_t)-V_{\pi_{\theta}}(s_t)$$
 可以用 V 来估计 Q，即有 $Q_{\pi}(s^n_t,a^n_t)=E(r_t^n+V_{\pi_{\theta}}(s_{t+1}))$ ，把这个式子带入上式，并且这里先去掉期望，所以有
 $$A^{\theta}\left(s_t,a_t\right) = r_t^n+V_{\pi}(s_{t+1}^n) - V_{\pi}(s_t)$$
