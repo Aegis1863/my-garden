@@ -33,7 +33,7 @@ $$ \begin{aligned}
 \end{aligned}$$
 
 但是 $R$ 需要改为优势函数，因为加分或者扣分可能是由前面某一动作造成的，而不是后来的动作造成的，每个状态每个动作都有不同的结果，所以用一整场游戏的分数对应给某个动作的概率是不合理的，所以每个动作的概率只需要乘以往后的折算的奖励，越远的动作造成的奖励，对当前动作的奖励影响也比较小，所以改写成：
-$$\nabla\bar{R}_{\theta}\approx\frac{1}{N}\sum_{n=1}^{N}\sum_{t=1}^{T_{n}}\left(\sum_{t^{T}=t}^{T_n}\gamma^{t^{\prime}-t}r_{t^{\prime}}^{n}-b\right)\nabla\log p_{\theta}\left(a_{t}^{n}\mid s_{t}^{n}\right)$$
+$$\nabla\bar{R}_{\theta}\approx\frac{1}{N}\sum_{n=1}^{N}\sum_{t=1}^{T_{n}}\left(\sum_{t'=t}^{T_n}\gamma^{t^{\prime}-t}r_{t^{\prime}}^{n}-b\right)\nabla\log p_{\theta}\left(a_{t}^{n}\mid s_{t}^{n}\right)$$
 b是基线，一般REINFORCE算法里面没有算b，它可以是奖励的均值，不写也可以，这里对奖励折算，就需要从后往前循环迭代计算，并且每往前推一次就要记录一次梯度。
 $$\sum_{t^{T}=t}^{T_n}\gamma^{t^{\prime}-t}r_{t^{\prime}}^{n}-b$$
 这部分这里就是优势函数，当然也可以不减b。折算的那部分，可以理解为奖励应该是多少，其实也可以用Q网络时序差分的目标$r+Q(s',a')$来代替，这样就不用折算了，还可以减去一个b，b也可以用Q网络估计出来，这就是`评论员`，评论员估计的是当前的价值是多少，所以优势函数的目的就是计算实得和应得的差异。在后面的演员评论员框架中，演员通常是策略网络，评论员通常是Q网络。
