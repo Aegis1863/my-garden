@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/personal-work/residuals/","dgPassFrontmatter":true,"created":"2023-11-08T20:54:14.366+08:00"}
+{"dg-publish":true,"permalink":"/personal-work/residuals/","created":"2024-01-10T10:29:37.578+08:00"}
 ---
 
 <h1><center>残差：不止统计</center></h1>
