@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/12-muti-agent-rl/","created":"2024-01-10T10:29:37.368+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/12-muti-agent-rl/","dgPassFrontmatter":true,"created":"2024-01-10T10:29:37.368+08:00"}
 ---
 
 代码  [19\_多智能体.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/19_%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93.ipynb)
@@ -24,7 +24,7 @@ CTDE 可以类比成一个足球队的训练和比赛过程：在训练时，11 
 
 # 2. 多智能体和类似任务的状态设计
 
-可以发现很多类似任务设计中，如果是比较复杂的状态，比如是数组的组合，复合数组等，都是“暴力”拼接、拉直的，类似 [[MLP-ABC/06_其他机器学习技术#卷积神经网络\|CNN]] 中把最后提取的特征展平到 [[MLP-ABC/02_神经网络\|MLP]] 一样，对人类来说这样做很难学到任何东西，但是对神经网络来说是有效的。
+可以发现很多类似任务设计中，如果是比较复杂的状态，比如是数组的组合，复合数组等，都是“暴力”拼接、拉直的，类似 [[Machine Learning/MLP-ABC/06_其他机器学习技术#卷积神经网络\|CNN]] 中把最后提取的特征展平到 [[Machine Learning/MLP-ABC/02_神经网络\|MLP]] 一样，对人类来说这样做很难学到任何东西，但是对神经网络来说是有效的。
 
 # 3. 多智能体编程技巧
 
