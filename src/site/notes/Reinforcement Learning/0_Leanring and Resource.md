@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/0-leanring-and-resource/","created":"2024-01-10T10:29:37.185+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/0-leanring-and-resource/","dgPassFrontmatter":true,"created":"2024-01-10T10:29:37.185+08:00"}
 ---
 
 # 1. 入门介绍
