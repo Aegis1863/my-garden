@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/8-soft-actor-critic-sac/","created":"2024-01-10T10:29:37.180+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/8-soft-actor-critic-sac/","dgPassFrontmatter":true,"created":"2024-01-10T10:29:37.180+08:00"}
 ---
 
 代码 [14\_SAC.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/14_SAC.ipynb)
@@ -201,9 +201,6 @@ $$
 &\operatorname{max}(Q^*_{T-1}(s_{T-1},a_{T-1})-\alpha^*_T\mathcal{H}(\pi_T^*))\\
 &= \underset{\alpha_{T-1}\geq0}{\operatorname{min}}\underset{\pi_{T-1}}{\operatorname{max}}
 (Q^*_{T-1}(s_{T-1},a_{T-1})-\alpha^*_T\mathcal{H}(\pi_T^*))+\alpha_{T-1}(\mathcal{H}(\pi_{T-1})-\mathcal{H}_0)\\
-
-
-
 \end{align}
 $$
 先确定$\pi_{T-1}^*$，再去掉无关的常数，就可以给出$\alpha_{T-1}$的目标式
