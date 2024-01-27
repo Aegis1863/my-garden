@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/1-dqn/","created":"2024-01-10T10:29:37.486+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/1-dqn/","dgPassFrontmatter":true,"created":"2024-01-10T10:29:37.486+08:00"}
 ---
 
 
