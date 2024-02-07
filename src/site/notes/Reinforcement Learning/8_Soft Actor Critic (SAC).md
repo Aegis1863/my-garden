@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/reinforcement-learning/8-soft-actor-critic-sac/","dgPassFrontmatter":true,"created":"2024-01-10T10:29:37.180+08:00"}
+{"dg-publish":true,"permalink":"/reinforcement-learning/8-soft-actor-critic-sac/","dgPassFrontmatter":true,"created":"2023-08-07T00:33:22.499+08:00"}
 ---
 
 代码 [14\_SAC.ipynb](https://github.com/Aegis1863/ML_practice/blob/master/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/14_SAC.ipynb)
