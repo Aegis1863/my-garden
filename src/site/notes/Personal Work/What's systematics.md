@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/personal-work/what-s-systematics/","dgPassFrontmatter":true,"created":"2024-01-10T10:29:37.381+08:00"}
+{"dg-publish":true,"permalink":"/personal-work/what-s-systematics/","dgPassFrontmatter":true,"created":"2023-10-25T09:58:53.631+08:00"}
 ---
 
 # 系统科学、老三论和机器学习
